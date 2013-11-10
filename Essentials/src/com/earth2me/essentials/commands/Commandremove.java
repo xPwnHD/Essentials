@@ -210,7 +210,7 @@ public class Commandremove extends EssentialsCommand
 				case ENTITIES:
 					if (e instanceof Entity)
 					{
-						if (e instanceof HumanEntity || e instanceof Tameable)
+						if (e instanceof HumanEntity)
 						{
 							continue;
 						}
