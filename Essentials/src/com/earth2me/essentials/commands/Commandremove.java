@@ -110,7 +110,13 @@ public class Commandremove extends EssentialsCommand
 						continue;
 					}
 				}
-				//TODO: this would probably be better as a case statement instead of all the ifs
+				if (e instanceof Tameable)
+				{
+					if (((Tameable)e).isTamed())
+					{
+						continue;
+					}
+				}
 				switch (toRemove)
 				{
 				case DROPS:
