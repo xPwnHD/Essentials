@@ -11,6 +11,7 @@ import java.util.Random;
 import net.ess3.api.IEssentials;
 
 
+//Todo: make keyword replacement work
 public class Announcer
 {
 	private final List<String> messages;
