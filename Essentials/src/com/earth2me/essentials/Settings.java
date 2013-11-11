@@ -1113,6 +1113,24 @@ public class Settings implements net.ess3.api.ISettings
 		return config.getInt("max-nick-length", 30);
 	}
 
+	@Override
+	public long getMessageInterval()
+	{
+		return config.getInt("announcer-message-interval", 120);
+	}
+
+	@Override
+	public boolean isAnnouncerRandom()
+	{
+		return config.getBoolean("announcer-randomize", false);
+	}
+
+	@Override
+	public boolean enableAnnouncer()
+	{
+		return config.getBoolean("enable-announcer");
+	}
+
 	// #easteregg
 	@Override
 	public int getMaxUserCacheCount()

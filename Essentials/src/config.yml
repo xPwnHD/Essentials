@@ -702,4 +702,19 @@ respawn-listener-priority: high
 # When users die, should they respawn at their first home or bed, instead of the spawnpoint?
 respawn-at-home: false
 
+############################################################
+# +------------------------------------------------------+ #
+# |                 Essentials Announcer                 | #
+# +------------------------------------------------------+ #
+############################################################
+# this needs to be true for the announcer to work
+# the announcer will begin working on the next server restart
+enable-announcer: false
+
+# The interval, in seconds, between messages
+announcer-message-interval: 120
+
+# If true, messages in announcer.txt will be displayed in a random order.
+announcer-randomize: false;
+
 # End of File <-- No seriously, you're done with configuration.

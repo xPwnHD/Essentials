@@ -195,6 +195,12 @@ public interface ISettings extends IConf
 	Map<String, Object> getListGroupConfig();
 
 	int getMaxNickLength();
-	
+
+	long getMessageInterval();
+
+	boolean isAnnouncerRandom();
+
+	boolean enableAnnouncer();
+
 	int getMaxUserCacheCount();
 }

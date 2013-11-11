@@ -101,6 +101,7 @@ public class Essentials extends JavaPlugin implements net.ess3.api.IEssentials
 	private transient EssentialsTimer timer;
 	private transient List<String> vanishedPlayers = new ArrayList<String>();
 	private transient SimpleCommandMap scm;
+	private transient Announcer announcer;
 
 	@Override
 	public ISettings getSettings()
@@ -219,6 +220,23 @@ public class Essentials extends JavaPlugin implements net.ess3.api.IEssentials
 
 			timer = new EssentialsTimer(this);
 			scheduleSyncRepeatingTask(timer, 1000, 50);
+			if (settings.enableAnnouncer() == true)
+			{
+				try
+				{
+					announcer = new Announcer(this);
+				}
+				catch (IOException ex)
+				{
+					ex.printStackTrace();
+					LOGGER.log(Level.SEVERE, ("Could not load announcer.")); // todo: TL key
+				}
+				catch (Exception ex)
+				{
+					ex.printStackTrace();
+					LOGGER.log(Level.SEVERE, ("Could not load announcer.")); // todo: TL key
+				}
+			}
 
 			Economy.setEss(this);
 			execTimer.mark("RegHandler");
@@ -339,10 +357,7 @@ public class Essentials extends JavaPlugin implements net.ess3.api.IEssentials
 	}
 
 	@Override
-	public List<String> onTabComplete(CommandSender sender,
-									  Command command,
-									  String commandLabel,
-									  String[] args)
+	public List<String> onTabComplete(CommandSender sender, Command command, String commandLabel, String[] args)
 	{
 		// Allow plugins to override the command via onCommand
 		if (!getSettings().isCommandOverridden(command.getName()) && (!commandLabel.startsWith("e") || commandLabel.equalsIgnoreCase(command.getName())))

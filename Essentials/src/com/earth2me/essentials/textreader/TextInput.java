@@ -20,7 +20,6 @@ public class TextInput implements IText
 
 	public TextInput(final CommandSource sender, final String filename, final boolean createFile, final IEssentials ess) throws IOException
 	{
-
 		File file = null;
 		if (sender.isPlayer())
 		{
