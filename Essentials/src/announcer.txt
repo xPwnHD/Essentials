@@ -1,4 +1,4 @@
-Put messages for the announcer to read here
-test1
-test2
-test3
+Put messages for the announcer to read here messages should be seperated by a pound sign
+#this is the first message
+#&4this is the second message
+#&lthis is the third message
